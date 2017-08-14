@@ -16,7 +16,7 @@ public class BookRESTController {
 	@Autowired BookService bookService;
 	
 	@RequestMapping(value = "/books", method = RequestMethod.GET,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+					produces = MediaType.APPLICATION_JSON_VALUE)
 	public ArrayList<Book> getBookList(){
 		
 		ArrayList<Book> bookList = new ArrayList<Book>();
