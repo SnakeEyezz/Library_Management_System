@@ -15,6 +15,20 @@ public class Book {
 	private float price;
 	private int quantity;
 	
+	public Book() {
+
+	}
+	
+	public Book(int id, String name, String author, float price, int quantity) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.author = author;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
