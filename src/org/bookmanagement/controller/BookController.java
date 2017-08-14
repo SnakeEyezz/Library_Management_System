@@ -19,7 +19,7 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
-	@RequestMapping(value = "/bookList.html", method = RequestMethod.GET)
+	@RequestMapping(value = "/bookList", method = RequestMethod.GET)
 	public ModelAndView listBooks(Map<String, Object> map){
 		
 		map.put("bookList", bookService.listBook());
@@ -27,14 +27,14 @@ public class BookController {
 		return new ModelAndView("bookList");
 	}
 	
-	@RequestMapping(value = "/addBook.html", method = RequestMethod.GET)
+	@RequestMapping(value = "/addBook", method = RequestMethod.GET)
 	public ModelAndView addBookForm(){
 		
 		ModelAndView model = new ModelAndView("addBook");
 		return model;
 	}
 	
-	@RequestMapping(value = "/addBookDetails.html", method = RequestMethod.POST)
+	@RequestMapping(value = "/addBookDetails", method = RequestMethod.POST)
 	public ModelAndView bookAddition(@ModelAttribute("book") Book book, BindingResult result){
 		
 		if(result.hasErrors()){
@@ -58,7 +58,7 @@ public class BookController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/editBookDetails.html", method = RequestMethod.POST)
+	@RequestMapping(value = "/editBookDetails", method = RequestMethod.POST)
 	public ModelAndView bookEdit(@ModelAttribute("book") Book book, BindingResult result){
 		
 		if(result.hasErrors()){
