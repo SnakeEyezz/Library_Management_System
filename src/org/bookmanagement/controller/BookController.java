@@ -83,6 +83,9 @@ public class BookController {
 		return model;
 	}
 	
+	//-------------------------------------------------------------------
+	//----------------------JSON starts from here------------------------
+	
 	@ResponseBody
 	@RequestMapping(value = "/books", method = RequestMethod.GET)
 	public ArrayList<Book> getBookList(){
@@ -90,6 +93,17 @@ public class BookController {
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		
 		bookList.addAll(bookService.listBook());
+		
+		return bookList;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/books/{id}", method = RequestMethod.GET)
+	public ArrayList<Book> getBook(@PathVariable("id") int id){
+		
+		ArrayList<Book> bookList = new ArrayList<Book>();
+		
+		bookList.add(bookService.getBookById(id));
 		
 		return bookList;
 	}
