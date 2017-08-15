@@ -5,15 +5,21 @@ import org.bookmanagement.model.Book;
 import org.bookmanagement.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class BookRESTController {
 	
-	@Autowired BookService bookService;
+	@Autowired 
+	private BookService bookService;
 	
 	@RequestMapping(value = "/books", method = RequestMethod.GET,
 					produces = MediaType.APPLICATION_JSON_VALUE)
@@ -36,5 +42,29 @@ public class BookRESTController {
 		
 		return bookList;
 	}
-
+	
+	@RequestMapping(value = "/books", method = RequestMethod.POST)
+	public boolean addBook(@RequestBody Book book){
+		
+		bookService.addBook(book);
+		
+		return true;
+	}
+	
+	@RequestMapping(value = "/books/{id}", method= RequestMethod.PUT)
+	public boolean updateBook(@PathVariable("id") int id, @RequestBody Book book){
+		
+		bookService.updateBook(book);
+		
+		return true;
+	}
+	
+	@RequestMapping(value = "/books/{id}", method= RequestMethod.DELETE)
+	public boolean removeBook(@PathVariable("id") int id){
+		
+		bookService.removeBook(id);
+		
+		return true;
+	}
+	
 }
