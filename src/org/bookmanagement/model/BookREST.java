@@ -1,5 +1,7 @@
 package org.bookmanagement.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "BOOK")
-public class Book {
+@Table(name = "BOOK_REST")
+public class BookREST {
 	
 	@Id
 	@GeneratedValue
@@ -22,18 +24,24 @@ public class Book {
 	private float price;
 	@Column(name = "QUANTITY")
 	private int quantity;
+	@Column(name = "PUBLISHED_ON")
+	private Date publishedOn;
+	@Column(name = "PURCHASED_ON")
+	private Date purchasedOn;
 
-	public Book() {
+	public BookREST() {
 
 	}	
 	
-	public Book(int id, String name, String author, float price, int quantity) {
+	public BookREST(int id, String name, String author, float price, int quantity, Date publishedOn, Date purchasedOn) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.author = author;
 		this.price = price;
 		this.quantity = quantity;
+		this.publishedOn = publishedOn;
+		this.purchasedOn = purchasedOn;
 	}
 
 	public int getId() {
@@ -65,6 +73,21 @@ public class Book {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	public Date getPublishedOn() {
+		return publishedOn;
+	}
+
+	public void setPublishedOn(Date publishedOn) {
+		this.publishedOn = publishedOn;
+	}
+
+	public Date getPurchasedOn() {
+		return purchasedOn;
+	}
+
+	public void setPurchasedOn(Date purchasedOn) {
+		this.purchasedOn = purchasedOn;
 	}
 
 }
