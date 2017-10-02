@@ -2,61 +2,27 @@ package org.bookmanagement.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 public class BookDTO {
 	
-	@Id
-	@GeneratedValue
-	@Column(name = "BOOK_ID")
-	private int id;
-	
-	@Column(name = "BOOK_NAME")
-	private String name;
-	
-	@Column(name = "AUTHOR")
+	private int bookId;
+	private String bookName;
 	private String author;
-	
-	@Column(name = "PRICE")
 	private float price;
-	
-	@Column(name = "QUANTITY")
 	private int quantity;
-	
-	@Column(name = "PUBLISHED_ON")
 	private Date publishedOn;
-	
-	@Column(name = "PURCHASED_ON")
 	private Date purchasedOn;
 
-	public BookDTO() {
-
-	}	
-	
-	public BookDTO(int id, String name, String author, float price, int quantity, Date publishedOn, Date purchasedOn) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.author = author;
-		this.price = price;
-		this.quantity = quantity;
-		this.publishedOn = publishedOn;
-		this.purchasedOn = purchasedOn;
+	public int getBookId() {
+		return bookId;
 	}
-
-	public int getId() {
-		return id;
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public String getBookName() {
+		return bookName;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
 	public String getAuthor() {
 		return author;
