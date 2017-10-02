@@ -1,6 +1,5 @@
 package org.bookmanagement.dao;
 
-import org.bookmanagement.model.Book;
 import org.bookmanagement.model.BookREST;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

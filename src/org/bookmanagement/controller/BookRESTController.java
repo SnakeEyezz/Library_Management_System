@@ -1,12 +1,8 @@
 package org.bookmanagement.controller;
 
-import java.util.ArrayList;
-import org.bookmanagement.model.Book;
 import org.bookmanagement.model.BookREST;
 import org.bookmanagement.service.BookRESTService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

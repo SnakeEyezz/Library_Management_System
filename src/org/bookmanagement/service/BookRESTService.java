@@ -1,9 +1,6 @@
 package org.bookmanagement.service;
 
-import java.util.List;
-
 import org.bookmanagement.dao.BookRESTDao;
-import org.bookmanagement.model.Book;
 import org.bookmanagement.model.BookREST;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
