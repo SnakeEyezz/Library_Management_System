@@ -1,19 +1,20 @@
 package org.bookmanagement.dao;
 
 import org.bookmanagement.model.BookREST;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class BookRESTDao {
 	
 	@Autowired
-	SessionFactory sessionFactory;
+	JdbcTemplate jdbcTemplate;
 	
 	public void addBookREST(BookREST bookREST) {
 		
-		sessionFactory.getCurrentSession().save(bookREST);
+		
+		
 	}
 
 	/*public void updateBook(Book book) {

@@ -16,16 +16,22 @@ public class BookREST {
 	@GeneratedValue
 	@Column(name = "BOOK_ID")
 	private int id;
+	
 	@Column(name = "BOOK_NAME")
 	private String name;
+	
 	@Column(name = "AUTHOR")
 	private String author;
+	
 	@Column(name = "PRICE")
 	private float price;
+	
 	@Column(name = "QUANTITY")
 	private int quantity;
+	
 	@Column(name = "PUBLISHED_ON")
 	private Date publishedOn;
+	
 	@Column(name = "PURCHASED_ON")
 	private Date purchasedOn;
 
