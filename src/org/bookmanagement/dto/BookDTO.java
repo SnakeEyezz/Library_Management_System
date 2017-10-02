@@ -11,7 +11,7 @@ public class BookDTO {
 	private int quantity;
 	private Date publishedOn;
 	private Date purchasedOn;
-
+	
 	public int getBookId() {
 		return bookId;
 	}
@@ -45,15 +45,12 @@ public class BookDTO {
 	public Date getPublishedOn() {
 		return publishedOn;
 	}
-
 	public void setPublishedOn(Date publishedOn) {
 		this.publishedOn = publishedOn;
 	}
-
 	public Date getPurchasedOn() {
 		return purchasedOn;
 	}
-
 	public void setPurchasedOn(Date purchasedOn) {
 		this.purchasedOn = purchasedOn;
 	}

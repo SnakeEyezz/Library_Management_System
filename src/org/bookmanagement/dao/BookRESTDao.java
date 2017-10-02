@@ -13,7 +13,14 @@ public class BookRESTDao {
 	
 	public void addBookDTO(BookDTO bookDTO) {
 		
+		String strsql = "call LMS_K_BOOK_DTO.p_add_book(?,?,?,?,?,?)";
 		
+		jdbcTemplate.update(strsql, new Object[]{bookDTO.getBookName(),
+												  bookDTO.getAuthor(),
+												  bookDTO.getPrice(),
+												  bookDTO.getQuantity(),
+												  bookDTO.getPublishedOn(),
+												  bookDTO.getPurchasedOn()});
 		
 	}
 
