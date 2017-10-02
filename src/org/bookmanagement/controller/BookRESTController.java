@@ -1,6 +1,6 @@
 package org.bookmanagement.controller;
 
-import org.bookmanagement.model.BookREST;
+import org.bookmanagement.dto.BookDTO;
 import org.bookmanagement.service.BookRESTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,9 +15,9 @@ public class BookRESTController {
 	private BookRESTService bookRESTService;
 	
 	@RequestMapping(value = "/books", method = RequestMethod.POST)
-	public boolean addBook(@RequestBody BookREST bookRest){
+	public boolean addBook(@RequestBody BookDTO bookDTO){
 		
-		bookRESTService.addBookREST(bookRest);
+		bookRESTService.addBookDTO(bookDTO);
 		
 		return true;
 	}

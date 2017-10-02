@@ -1,6 +1,6 @@
 package org.bookmanagement.dao;
 
-import org.bookmanagement.model.BookREST;
+import org.bookmanagement.dto.BookDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ public class BookRESTDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
-	public void addBookREST(BookREST bookREST) {
+	public void addBookDTO(BookDTO bookDTO) {
 		
 		
 		

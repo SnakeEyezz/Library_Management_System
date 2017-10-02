@@ -1,7 +1,7 @@
 package org.bookmanagement.service;
 
 import org.bookmanagement.dao.BookRESTDao;
-import org.bookmanagement.model.BookREST;
+import org.bookmanagement.dto.BookDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,9 +13,9 @@ public class BookRESTService {
 	BookRESTDao bookRESTDao;
 	
 	@Transactional
-	public void addBookREST(BookREST bookREST) {
+	public void addBookDTO(BookDTO bookDTO) {
 		
-		bookRESTDao.addBookREST(bookREST);
+		bookRESTDao.addBookDTO(bookDTO);
 	}
 
 	/*@Transactional

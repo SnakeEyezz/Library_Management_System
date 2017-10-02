@@ -3,13 +3,13 @@ package org.bookmanagement.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.bookmanagement.model.BookREST;
+import org.bookmanagement.dto.BookDTO;
 import org.springframework.jdbc.core.RowMapper;
 
-public class BookRESTMapper implements RowMapper<BookREST>{
+public class BookRESTMapper implements RowMapper<BookDTO>{
 
 	@Override
-	public BookREST mapRow(ResultSet resulSet, int rowCount) throws SQLException {
+	public BookDTO mapRow(ResultSet resulSet, int rowNum) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}

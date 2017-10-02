@@ -1,16 +1,12 @@
-package org.bookmanagement.model;
+package org.bookmanagement.dto;
 
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "BOOK_REST")
-public class BookREST {
+public class BookDTO {
 	
 	@Id
 	@GeneratedValue
@@ -35,11 +31,11 @@ public class BookREST {
 	@Column(name = "PURCHASED_ON")
 	private Date purchasedOn;
 
-	public BookREST() {
+	public BookDTO() {
 
 	}	
 	
-	public BookREST(int id, String name, String author, float price, int quantity, Date publishedOn, Date purchasedOn) {
+	public BookDTO(int id, String name, String author, float price, int quantity, Date publishedOn, Date purchasedOn) {
 		super();
 		this.id = id;
 		this.name = name;
