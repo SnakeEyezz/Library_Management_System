@@ -1,5 +1,7 @@
 package org.bookmanagement.service;
 
+import java.util.List;
+
 import org.bookmanagement.dao.BookRESTDao;
 import org.bookmanagement.dto.BookDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,29 +19,12 @@ public class BookRESTService {
 		
 		bookRESTDao.addBookDTO(bookDTO);
 	}
-
-	/*@Transactional
-	public void updateBook(Book book) {
-		
-		bookDao.updateBook(book);
-	}
-
+	
 	@Transactional
-	public List<Book> listBook() {
+	public List<BookDTO> searchBook(BookDTO bookDTO){
 		
-		return bookDao.listBook();
+		return bookRESTDao.searchBook(bookDTO);
+		
 	}
-
-	@Transactional
-	public Book getBookById(int bookId) {
-		
-		return bookDao.getBookById(bookId);
-	}
-
-	@Transactional
-	public void removeBook(int bookId) {
-		
-		bookDao.removeBook(bookId);
-	}*/
 
 }

@@ -1,8 +1,11 @@
 package org.bookmanagement.controller;
 
+import java.util.List;
+
 import org.bookmanagement.dto.BookDTO;
 import org.bookmanagement.service.BookRESTService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,44 +25,13 @@ public class BookRESTController {
 		return true;
 	}
 	
-	/*@RequestMapping(value = "/books", method = RequestMethod.GET,
+	@RequestMapping(value = "/books/search", method = RequestMethod.POST,
 					produces = MediaType.APPLICATION_JSON_VALUE)
-	public ArrayList<Book> getBookList(){
+	public List<BookDTO> getBookList(@RequestBody BookDTO bookDTO){
 		
-		ArrayList<Book> bookList = new ArrayList<Book>();
+		System.out.println(bookDTO.getReplacedOn());
+		return bookRESTService.searchBook(bookDTO);
 		
-		bookList.addAll(bookRESTService.listBook());
-		
-		return bookList;
 	}
-	
-	@RequestMapping(value = "/books/{id}", method = RequestMethod.GET, 
-					produces = MediaType.APPLICATION_JSON_VALUE)
-	public ArrayList<Book> getBook(@PathVariable("id") int id){
-		
-		ArrayList<Book> bookList = new ArrayList<Book>();
-		
-		bookList.add(bookRESTService.getBookById(id));
-		
-		return bookList;
-	}
-	
-
-	
-	@RequestMapping(value = "/books/{id}", method= RequestMethod.PUT)
-	public boolean updateBook(@PathVariable("id") int id, @RequestBody Book book){
-		
-		bookRESTService.updateBook(book);
-		
-		return true;
-	}
-	
-	@RequestMapping(value = "/books/{id}", method= RequestMethod.DELETE)
-	public boolean removeBook(@PathVariable("id") int id){
-		
-		bookRESTService.removeBook(id);
-		
-		return true;
-	}*/
 	
 }

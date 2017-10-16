@@ -11,6 +11,7 @@ public class BookDTO {
 	private int quantity;
 	private Date publishedOn;
 	private Date purchasedOn;
+	private Date replacedOn;
 	
 	public int getBookId() {
 		return bookId;
@@ -53,6 +54,12 @@ public class BookDTO {
 	}
 	public void setPurchasedOn(Date purchasedOn) {
 		this.purchasedOn = purchasedOn;
+	}
+	public Date getReplacedOn() {
+		return replacedOn;
+	}
+	public void setReplacedOn(Date replacedOn) {
+		this.replacedOn = replacedOn;
 	}
 
 }
